@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #101312;
+  --color-brand-surface: #161B19;
+  --color-brand-elevated: #1D2421;
+  --color-brand-text: #FFFFFF;
+  --color-brand-muted: #9CA8A3;
+  --color-brand-lime: #BAF91A;
+  --color-brand-lime-light: #E2FF99;
+  --color-brand-violet: #876DFF;
+  --color-brand-cyan: #4EE4D8;
+  --color-brand-border: #232B27;
+  --color-brand-border-glow: rgba(186, 249, 26, 0.25);
+
+  --font-display: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-ibm-mono), "SF Mono", Consolas, Menlo, monospace;
+}
+
+:root {
+  --bg: #101312;
+  --surface: #161B19;
+  --elevated: #1D2421;
+  --text: #FFFFFF;
+  --muted: #9CA8A3;
+  --lime: #BAF91A;
+  --lime-light: #E2FF99;
+  --violet: #876DFF;
+  --cyan: #4EE4D8;
+  --border: #232B27;
+}
+
+* {
+  border-color: #232B27;
+}
+
+body {
+  background-color: #101312;
+  color: #FFFFFF;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Accessible focus ring with neon lime brand accent */
+:focus-visible {
+  outline: 2px solid #BAF91A;
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: rgba(186, 249, 26, 0.25);
+  color: #BAF91A;
+}
+
+/* Atmospheric Glowing Nebula Gradients from Reference 1 & 2 */
+.glow-ambient-lime {
+  background: radial-gradient(circle at 50% 0%, rgba(186, 249, 26, 0.08) 0%, transparent 65%);
+}
+
+.glow-ambient-violet {
+  background: radial-gradient(circle at 80% 20%, rgba(135, 109, 255, 0.12) 0%, transparent 50%);
+}
+
+.glow-orb-shadow {
+  box-shadow: 0 0 45px rgba(186, 249, 26, 0.2), 0 0 90px rgba(135, 109, 255, 0.15);
+}
+
+/* Scientific Grid Background Texture */
+.bg-laboratory-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(35, 43, 39, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 43, 39, 0.45) 1px, transparent 1px);
+}
+
+/* Diagonal Striped Chart Texture (InsightOS Style) */
+.bg-striped-lime {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(186, 249, 26, 0.15),
+    rgba(186, 249, 26, 0.15) 6px,
+    rgba(186, 249, 26, 0.03) 6px,
+    rgba(186, 249, 26, 0.03) 12px
+  );
+}
+
+/* Monospace numeric alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbars for technical laboratory aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #101312;
+}
+::-webkit-scrollbar-thumb {
+  background: #232B27;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BAF91A;
+}
+
+/* Print styles for export reports */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
