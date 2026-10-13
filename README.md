@@ -1,5 +1,12 @@
 # QUANTUMON: Quantum Kernel Intelligence for Cancer Research
 
+[![CI Pipeline](https://github.com/25A31A4264/Quantum-Kernel-Learning-for-Cancer-Prediction/actions/workflows/ci.yml/badge.svg)](https://github.com/25A31A4264/Quantum-Kernel-Learning-for-Cancer-Prediction/actions/workflows/ci.yml)
+[![Qiskit 2.5](https://img.shields.io/badge/Qiskit-2.5-6929C4?logo=ibm&logoColor=white)](https://qiskit.org)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://python.org)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 > **Qiskit Fall Fest 2026 — Domain 2: Quantum Kernel Learning for Cancer Prediction**  
 > *A scientific research web platform evaluating quantum feature map decision boundaries against tuned classical baselines.*
 
@@ -123,18 +130,26 @@ docker compose up --build
 - Backend API: `http://localhost:8000`
 - Swagger Docs: `http://localhost:8000/docs`
 
+### 1-Click Cloud Deployment
+
+| Component | Platform | One-Click Deploy |
+| :--- | :--- | :--- |
+| **Backend API** (FastAPI + Qiskit) | **Render** | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/25A31A4264/Quantum-Kernel-Learning-for-Cancer-Prediction) |
+| **Frontend UI** (Next.js 16) | **Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F25A31A4264%2FQuantum-Kernel-Learning-for-Cancer-Prediction&root-directory=frontend) |
+
 ---
 
-### Deploy Frontend to Vercel
-1. Push this repository to GitHub or GitLab.
-2. Import the project into [Vercel](https://vercel.com).
-3. Set the Root Directory to `frontend`.
-4. Add environment variable `NEXT_PUBLIC_API_URL` pointing to your deployed backend.
+### Step-by-Step Deployment Instructions
 
----
+#### 1. Deploy the Backend to Render (Free Tier)
+1. Click the **[Deploy to Render](https://render.com/deploy?repo=https://github.com/25A31A4264/Quantum-Kernel-Learning-for-Cancer-Prediction)** button above.
+2. Render detects [`render.yaml`](file:///c:/Users/venka/OneDrive/Desktop/Quantum/render.yaml) automatically.
+3. Click **Apply**.
+4. Once deployed, copy your service URL (e.g., `https://quantumon-backend.onrender.com`).
+5. Verify health: `https://quantumon-backend.onrender.com/api/health`
 
-### Deploy Backend to Render / Railway / Cloud Run
-1. Connect repository to Render / Railway / Google Cloud Run.
-2. Root directory: `backend`
-3. Build command: `pip install -r requirements.txt && python init_experiments.py`
-4. Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+#### 2. Deploy the Frontend to Vercel (Free Tier)
+1. Click the **[Deploy with Vercel](https://vercel.com/button)** button above.
+2. Set the environment variable:
+   - `NEXT_PUBLIC_API_URL` = `https://quantumon-backend.onrender.com` (your Render URL from step 1).
+3. Click **Deploy**. Your research portal will be live on `https://<your-project>.vercel.app`!

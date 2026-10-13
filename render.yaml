@@ -1,0 +1,15 @@
+services:
+  # ---------------------------------------------------------------------------
+  # QUANTUMON Backend API (FastAPI + Qiskit + Scikit-Learn)
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: quantumon-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python init_experiments.py
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
