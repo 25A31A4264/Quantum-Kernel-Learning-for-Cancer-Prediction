@@ -431,7 +431,7 @@ export default function QuantumLabPage() {
 
         {!kernelResult ? (
           <div className="py-16 text-center text-[#A1AAA9] space-y-3 font-mono text-xs border border-[#2A3335] rounded bg-[#0B0D0F]">
-            <p>Click "Compute Kernel Matrix" above to execute genuine Qiskit statevector simulation.</p>
+            <p>Click &quot;Compute Kernel Matrix&quot; above to execute genuine Qiskit statevector simulation.</p>
             <button
               onClick={handleComputeKernel}
               className="px-4 py-2 rounded bg-[#191F22] border border-[#62E6E0] text-[#62E6E0] font-bold hover:bg-[#62E6E0] hover:text-[#0B0D0F] transition-colors"
